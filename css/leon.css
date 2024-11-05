@@ -1,0 +1,563 @@
+:root {
+    --main-color: #10CAB7;
+    --secondary-color: #24484F;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+}
+
+@media (max-width: 767px) {
+
+    .header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Mobile */
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* Tablets */
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+    /* Small Laptops */
+    .container {
+        max-width: 900px;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) {
+
+    /* Laptops and Desktops */
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1920px) {
+
+    /* Large Screens */
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* --------------------- start header ------------------------ */
+
+/* to make element in one vertical line */
+/* size of container changes depend on mediaQuery */
+.header .container {
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .container .logo span {
+    color: var(--main-color);
+}
+
+.header .container .links {
+    width: 40px;
+    position: relative;
+}
+
+/* to show ul when hover */
+.header .container .links:hover ul {
+    display: block;
+}
+
+
+.header .container .links .icon {
+    width: 35px;
+    display: flex;
+    flex-flow: row-reverse wrap;
+}
+
+
+.header .container .links .icon span {
+    background-color: var(--secondary-color);
+    height: 3.5px;
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+.header .container .links .icon span:nth-child(2) {
+    width: 60%;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.header .container .links:hover .icon span:nth-child(2) {
+    width: 100%;
+}
+
+/* for links */
+.header .container .links ul {
+    list-style: none;
+    margin: 0px;
+    background-color: #f6f6f6;
+    position: absolute;
+    right: 0px;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    display: block;
+    padding: 0px;
+    display: none;
+    animation: ul-animation 1s 0s 1;
+    -webkit-animation: ul-animation 1s 0s 1;
+    z-index: 1;
+}
+
+@keyframes ul-animation {
+    0% {
+        opacity: 0%;
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        -moz-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        -o-transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+    }
+}
+
+/* arrow */
+.header .container .links ul::before {
+    content: '';
+    top: -25px;
+    right: 10px;
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+}
+
+.header .container .links ul li:not(:last-child) {
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.header .links ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.header .links ul li a:hover {
+    padding-left: 25px;
+}
+
+/* end links */
+
+/* --------------------- end header ------------------------ */
+
+/* ---------------------start landing --------------------- */
+.landing {
+    background-image: url(../images/landing.jpg);
+    background-size: cover;
+    height: calc(100vh - 60px);
+    position: relative;
+}
+
+.landing .intro-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    text-align: center;
+}
+
+.landing h1 {
+    margin-top: 0px;
+    font-size: 50px;
+    color: var(--main-color);
+}
+
+.landing p {
+    line-height: 30px;
+    width: 310px;
+    font-size: large;
+    font-weight: 500;
+}
+
+/* ---------------------end landing --------------------- */
+
+/* ---------------------start features --------------------- */
+
+.feature {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+    text-align: center;
+}
+
+.feature .container {
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-content: center;
+    align-items: center;
+    align-content: start;
+    gap: 30px;
+}
+
+.feature .container .feat i {
+    color: var(--main-color);
+    font-size: xxx-large;
+}
+
+.feature .container .feat p {
+    color: #666;
+    line-height: 30px;
+}
+
+/* ---------------------end features --------------------- */
+
+
+/* ---------------------start services --------------------- */
+.services .container {
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* start heading */
+.special-heading {
+    text-align: center;
+    font-size: 100px;
+    color: #ebeced;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+
+.special-heading+p {
+    color: #797979;
+    font-size: 20px;
+    margin-top: -25px;
+    text-align: center
+}
+
+@media (max-width : 767px) {
+    .special-heading {
+        font-size: 70px;
+    }
+
+    .special-heading+p {
+        font-size: 20px;
+        margin-top: -20px;
+        text-align: center
+    }
+}
+
+/* end heading */
+
+/* start services */
+.services i {
+    color: var(--main-color);
+    position: relative;
+    top: 15px;
+}
+
+.services .services-content {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: 600px;
+    justify-content: center;
+    align-items: start;
+    column-gap: 25px;
+}
+
+.services .services-content .serv {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+@media (max-width : 767px) {
+    .services .services-content .serv {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+.services .serv .text {
+    flex: 1;
+}
+
+.services .serv p {
+    color: #797979;
+    line-height: 30px;
+}
+
+.services .image {
+    position: relative;
+}
+
+.services .image::before {
+    content: '';
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: -50px;
+    right: -30px;
+    width: 100px;
+    height: calc(100% + 100px);
+    z-index: -1;
+}
+
+@media (min-width: 1125px) and (max-width: 1279px) {
+    .services .image::before {
+        right: -80px;
+    }
+}
+
+@media (max-width: 1279px) {
+    .services .image {
+        display: none;
+    }
+}
+
+/* ---------------------end services --------------------- */
+
+/* ---------------------start portfolio --------------------- */
+.portfolio {
+    background-color: #ebeced;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.portfolio .container {
+    margin: 0 auto;
+}
+
+.portfolio .special-heading {
+    color: white;
+}
+
+.portfolio-content {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio img {
+    height: 100%;
+    width: 100%;
+}
+
+.portfolio .card {
+    background-color: white;
+}
+
+.portfolio .card .info {
+    padding: 20px;
+}
+
+.portfolio h3 {
+    margin: 0;
+}
+
+.portfolio .card p {
+    line-height: 25px;
+}
+
+
+/* ---------------------end portfolio --------------------- */
+
+/* ---------------------start about --------------------- */
+.about {
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.about .container {
+    margin: 0 auto;
+}
+
+.about .special-heading h1 {
+    margin-top: 0px;
+}
+
+.about .special-heading p {
+    letter-spacing: 0px;
+    word-spacing: 5px;
+    font-weight: 400;
+    color: #797979;
+    font-size: 20px;
+    margin-top: -180px;
+    text-align: center
+}
+
+@media ((min-width: 0px) and (max-width : 767px)) {
+
+    .about .special-heading p {
+        margin-top: -85px;
+    }
+
+    .about .special-heading h1 {
+        font-size: 90px;
+    }
+
+}
+
+.about .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.about .about-content .about-info {
+    flex-basis: 100%;
+}
+
+.about .about-content .about-info p:first-of-type {
+    font-weight: bold;
+}
+
+.about .about-content .about-info hr {
+    width: 50%;
+    border-color: var(--main-color);
+}
+
+/* ---------------------end about --------------------- */
+
+/* ---------------------start contact --------------------- */
+.contact {
+    background-color: #ebeced;
+    padding: 10px 30px 70px 30px;
+    text-align: center;
+}
+
+.contact .container {
+    margin: 0 auto;
+}
+
+.contact .special-heading {
+    color: white;
+}
+
+
+@media ((min-width: 0px) and (max-width : 767px)) {
+
+    .contact .special-heading {
+        font-size: 60px;
+    }
+
+    .contact .about-contact a:not([class=icon]) {
+        font-size: 20px !important;
+    }
+
+    .contact .about-contact p:last-of-type {
+        display: block !important;
+        padding-bottom: 5px;
+    }
+}
+
+.contact .about-contact p:first-of-type {
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+
+.contact .about-contact a:not([class=icon]) {
+    display: block;
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--main-color);
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.contact .about-contact p:last-of-type {
+    display: inline;
+    margin: 10px;
+}
+
+.contact i {
+    margin-left: 10px;
+}
+
+/* ---------------------end contact --------------------- */
+
+/* ---------------------start footer --------------------- */
+.footer {
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.footer .container {
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+}
+
+.footer p {
+    color: white;
+    font-size: 18px;
+}
+
+.footer span {
+    color: var(--main-color);
+    font-weight: bold
+}
+
+@media ((min-width: 0px) and (max-width : 767px)) {
+    .footer p {
+        font-size: 15px;
+    }
+}
+
+/* ---------------------end footer --------------------- */
